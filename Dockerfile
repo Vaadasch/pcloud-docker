@@ -23,6 +23,7 @@ make install && \
 ldconfig && \
 cd ../.. && \
 rm -rf console-client && \
+mkdir /pdrive && \
 apt-get remove -y --purge git cmake zlib1g-dev libboost-system-dev libboost-program-options-dev libpthread-stubs0-dev libfuse-dev libudev-dev build-essential && \
 apt-get -y autoremove && \
 apt-get -y clean
