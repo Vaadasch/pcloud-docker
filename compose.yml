@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  pcloud : 
+    image: pcloud-docker:test
+    container_name: pcloud
+    privileged: true
+    # My portainer need me to add this :
+    mem_swappiness: -1
+    
+    environment:
+      PCLOUD_LOGIN: "MY_EMAIL"
+    volumes:
+      - /mypath/script.sh:/home/pcloud/script.sh
+      - data2backup:/data
+      - /dev/fuse:/dev/fuse
+      - /mypath/my_password.txt:/home/pcloud/my_password.txt
+      
