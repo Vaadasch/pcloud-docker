@@ -1,9 +1,13 @@
 # pcloud-docker
 
+A "simple" container that connect to EU Pcloud, mount it in /home/pcloud/pCloudDrive and execute whatever you could have done in binded /home/pcloud/script.sh (like take files from a shared volume and send them to pCloudDrive
+
 ## Warnings : 
 Never expose services from this container as it needs to have the `--privileged` flag or `CAP_SYS_ADMIN`. 
 
 If only the host administrators can have access to the container and there is only a shared volume and pCloud connection, this ***should*** be ok
+
+There is a `sed -i 's#binapi.pcloud.com#bineapi.pcloud.com#' psynclib.c` before compilation of [pcloudcc](https://github.com/pcloudcom/console-client) to connect to EU servers. I don't know if it is still working for other regions.
 
 ## Usage
 
