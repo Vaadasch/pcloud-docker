@@ -7,10 +7,10 @@ fi
 
 if [ -f /my_password.txt ] ; then
         echo "Connection using the password"
-        pcloudcc -u $PCLOUD_LOGIN -s -p < /my_password.txt &
+        pcloudcc -u $PCLOUD_LOGIN -s -m /pdrive -p < /my_password.txt &
 else
         echo "Connection without password"
-        pcloudcc -u $PCLOUD_LOGIN &
+        pcloudcc -u $PCLOUD_LOGIN -m /pdrive &
 fi
 
 echo "Waiting 20 secondes to pCloud to scan and check if fusermount is here"
