@@ -1,7 +1,7 @@
 # pcloud-docker
 
 ## Warnings : 
-Never expose services from this container as it needs to have the `--privileged` flag. I've tried to use `CAP_SYS_ADMIN` but doesn't seems to work yet.
+Never expose services from this container as it needs to have the `--privileged` flag or `CAP_SYS_ADMIN`. 
 
 ## Usage
 
