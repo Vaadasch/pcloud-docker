@@ -3,6 +3,8 @@
 ## Warnings : 
 Never expose services from this container as it needs to have the `--privileged` flag or `CAP_SYS_ADMIN`. 
 
+If only the host administrators can have access to the container and there is only a shared volume and pCloud connection, this ***should*** be ok
+
 ## Usage
 
 Define what you want to do with this container with the script.sh binded to `/home/pcloud/script.sh`. You'll probably want to send files to pCloud, you can map a shared volume at /data or anywhere else, only the script.sh will be using it anyway.
