@@ -5,19 +5,21 @@ if [ -z $PCLOUD_LOGIN ] ; then
         exit 0
 fi
 
-cmdargs=""
 if [ -f /home/$USER/my_password.txt ] ; then
-        pid=$(pcloudcc -u $PCLOUD_LOGIN -d -s -p < /home/$USER/my_password.txt | grep -Eo "[0-9]{2,}" | uniq)
+        pcloudcc -u $PCLOUD_LOGIN -s -p < /home/$USER/my_password.txt &
 else
-        pid=$(pcloudcc -u $PCLOUD_LOGIN -d  | grep -Eo "[0-9]{2,}" | uniq)
+        pcloudcc -u $PCLOUD_LOGIN &
 fi
 
 sleep 1
 
-if [ -z "$pid" ] || ! ps -p $pid > /dev/null ; then
+if [ $(ps aux | grep pCloudDr | grep -v grep | wc -l) != 2 ] ; then
         echo "Unable to start pCloudCC"
         exit 0
 fi
 
-echo $pid > /home/pcloud/.pcloud/pid
+while [ 1 ] ; do
+        sleep 2
+        /bin/bash /home/pcloud/script.sh
+done
 
