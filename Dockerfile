@@ -28,15 +28,14 @@ apt-get -y autoremove && \
 apt-get -y clean
 
 COPY scripts/start.sh /home/pcloud/start.sh
-COPY scripts/pcloud /etc/init.d/pcloud
 
-RUN chown pcloud /home/pcloud/start.sh && chmod +x /home/pcloud/start.sh && chmod +x /etc/init.d/pcloud && update-rc.d pcloud defaults
+RUN chown pcloud /home/pcloud/start.sh && chmod +x /home/pcloud/start.sh
 
 VOLUME /home/pcloud/my_password.txt
 VOLUME /dev/fuse
 VOLUME /home/pcloud/script.sh
 USER pcloud
 
-CMD ["/bin/bash", "/home/pcloud/script.sh"]
+CMD ["/bin/bash", "/home/pcloud/start.sh"]
 
 
