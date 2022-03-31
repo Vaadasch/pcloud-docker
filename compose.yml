@@ -11,8 +11,8 @@ services:
     environment:
       PCLOUD_LOGIN: "MY_EMAIL"
     volumes:
-      - /mypath/script.sh:/home/pcloud/script.sh
+      - /mypath/script.sh:/script.sh
       - data2backup:/data
       - /dev/fuse:/dev/fuse
-      - /mypath/my_password.txt:/home/pcloud/my_password.txt
+      - /mypath/my_password.txt:/my_password.txt
       
