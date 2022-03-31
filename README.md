@@ -1,6 +1,6 @@
 # pcloud-docker
 
-A "simple" container that connect to EU Pcloud, mount it in /home/pcloud/pCloudDrive and execute whatever you could have done in binded /home/pcloud/script.sh (like take files from a shared volume and send them to pCloudDrive
+A "simple" container that connect to EU Pcloud, mount it in /home/pcloud/pCloudDrive and execute every 2 second whatever you could have done in binded /home/pcloud/script.sh (like take files from a shared volume and send them to pCloudDrive)
 
 ## Warnings : 
 Never expose services from this container as it needs to have the `--privileged` flag or `CAP_SYS_ADMIN`. 
