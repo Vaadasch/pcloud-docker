@@ -18,7 +18,7 @@ Secrets are for docker swarm, i myself run in standalone
 
 Define what you want to do with this container with the script.sh binded to `/script.sh`. You'll probably want to send files to pCloud, you can map a shared volume at `/data` or anywhere else, only the script.sh will be using it anyway.
 
-You might need to set permissions to pcloud user on the /data volume dir
+You might need to set permissions to pcloud user on the /data volume dir. I don't know how to do that, i'm using binded volumes
 
 See `compose.yml` :
 
