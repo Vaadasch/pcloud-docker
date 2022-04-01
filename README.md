@@ -30,7 +30,7 @@ services:
       PCLOUD_LOGIN: "MY_EMAIL"
       BACKUP_DIR: "Automated_saves"
     volumes:
-      - /mypath/script.sh:/script.sh
+      # - /mypath/script.sh:/script.sh
       - data2backup:/data
       - /dev/fuse:/dev/fuse
       - /mypath/my_password.txt:/my_password.txt
