@@ -16,7 +16,7 @@ Secrets are for docker swarm, i myself run in standalone
 
 ## Usage
 
-Define what you want to do with this container with the script.sh binded to `/script.sh`. You'll probably want to send files to pCloud, you can map a shared volume at /data or anywhere else, only the script.sh will be using it anyway.
+Define what you want to do with this container with the script.sh binded to `/script.sh`. You'll probably want to send files to pCloud, you can map a shared volume at `/data` or anywhere else, only the script.sh will be using it anyway.
 
 See `compose.yml` :
 
@@ -28,6 +28,7 @@ services:
     privileged: true
     environment:
       PCLOUD_LOGIN: "MY_EMAIL"
+      BACKUP_DIR: "Automated_saves"
     volumes:
       - /mypath/script.sh:/script.sh
       - data2backup:/data
