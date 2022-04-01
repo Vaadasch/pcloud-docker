@@ -8,7 +8,7 @@ dt=$(date -Iminutes | awk -F '+' '{print $1}' | sed 's#T#_#')
 find /data -maxdepth 1 -mindepth 1 -print0 | while IFS= read -r -d '' file; do
         [ -e "$file" ] || continue
         name=${file##*/}
-        [ -z "$name"] || continue
+        [ -z "$name" ] || continue
         mkdir -p "/pdrive/$BACKUP_DIR/$name"
         tar -zcf "/pdrive/$BACKUP_DIR/$name/${name}_${dt}.tar.gz" "$file"
         rm -rf "$file"
